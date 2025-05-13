@@ -29,7 +29,7 @@ jobs:
         git config --global user.email "actions@github.com"
 
     - name: Run the script
-      run: python your_script.py  # Замените на путь к вашему скрипту
+      run: python script.py  # Замените на путь к вашему скрипту
       env:
         COOKIES_IN_FILE: "input_files/cookies.json"
         COOKIES_OUT_FILE: "output_files/cookies_out.json"
