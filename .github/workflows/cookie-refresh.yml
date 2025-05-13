@@ -2,7 +2,7 @@ name: Cookie Refresh
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Каждый час
+    - cron: '/30 * * * *'  # Каждый час
   workflow_dispatch:  # Позволяет запускать вручную
 
 jobs:
