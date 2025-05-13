@@ -25,7 +25,7 @@ jobs:
 
     - name: Run the script
       run: |
-        python your_script.py  # Замените на имя вашего скрипта
+        python script.py  # Замените на имя вашего скрипта
       env:
         COOKIES_IN_FILE: "input_files/cookies.json"
         COOKIES_OUT_FILE: "output_files/cookies_out.json"
