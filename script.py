@@ -1,12 +1,10 @@
 import requests
-import time
 import json
 
-COOKIES_IN_FILE = "C:\\Users\\ДАР\\Downloads\\cookies.json"
-COOKIES_OUT_FILE = "C:\\Users\\ДАР\\Downloads\\cookies_out.jsonn"
+COOKIES_IN_FILE = "input_files/cookies.json"  # Путь к входным файлам
+COOKIES_OUT_FILE = "output_files/cookies_out.json"  # Путь к выходным файлам
 URL = "https://donschool115.eljur.ru/journal-app"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-REQUEST_INTERVAL = 300  # 5 минут
 
 def load_cookies_from_json(filename):
     with open(filename, encoding="utf-8") as f:
@@ -74,7 +72,4 @@ def refresh_session():
     print(f"💾 Куки сохранены в {COOKIES_OUT_FILE}")
 
 if __name__ == "__main__":
-    while True:
-        refresh_session()
-        print(f"⏳ Ожидание {REQUEST_INTERVAL // 60} минут...\n")
-        time.sleep(REQUEST_INTERVAL)
+    refresh_session()  # Запускаем скрипт один раз
