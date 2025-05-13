@@ -1,8 +1,11 @@
 name: Cookie Refresh
 
 on:
+  push:
+    branches:
+      - master   
   schedule:
-    - cron: '*/2 * * * *'  # Каждый час
+    - cron: '*/5 * * * *'  # Каждый час
   workflow_dispatch:  # Позволяет запускать вручную
 
 jobs:
