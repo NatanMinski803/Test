@@ -1,14 +1,16 @@
-import os
 import requests
 import time
 import json
+import os
 import subprocess
 
-COOKIES_IN_FILE = "input_files/cookies.json"
-COOKIES_OUT_FILE = "output_files/cookies_out.json"
+COOKIES_IN_FILE = "cookies.json"
+COOKIES_OUT_FILE = "cookies_out.json"
 URL = "https://donschool115.eljur.ru/journal-app"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 REQUEST_INTERVAL = 300  # 5 минут
+GITHUB_TOKEN = "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"  # Замените на ваш токен
+GITHUB_REPO = "NatanMinski803/Test"  # Замените на ваш репозиторий
 
 def load_cookies_from_json(filename):
     with open(filename, encoding="utf-8") as f:
@@ -54,6 +56,8 @@ def save_cookies(session, path, original_cookies):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(cookie_list, f, indent=2, ensure_ascii=False)
 
+    print(f"Куки сохранены в {path}")
+
 def refresh_session():
     print("🔄 Запуск обновления сессии...")
     session = requests.Session()
@@ -75,11 +79,14 @@ def refresh_session():
     save_cookies(session, COOKIES_OUT_FILE, original_cookie_data)
     print(f"💾 Куки сохранены в {COOKIES_OUT_FILE}")
 
-    # Коммит изменений в репозиторий
-    print("🔄 Выполнение коммита и пуша изменений в репозиторий...")
+    # Добавляем токен в URL для пуша
+    repo_url = f"https://{GITHUB_TOKEN}@github.com/{GITHUB_REPO}.git"
+
+    # Пушим изменения в репозиторий
+    subprocess.run(["git", "remote", "set-url", "origin", repo_url])
     subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "Обновлены куки"])
-    subprocess.run(["git", "push"])
+    subprocess.run(["git", "commit", "-m", "Обновление куки"])
+    subprocess.run(["git", "push", "origin", "master"])
 
 if __name__ == "__main__":
     refresh_session()
