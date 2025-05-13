@@ -1,10 +1,14 @@
+import os
 import requests
+import time
 import json
+import subprocess
 
-COOKIES_IN_FILE = "input_files/cookies.json"  # Путь к входным файлам
-COOKIES_OUT_FILE = "output_files/cookies_out.json"  # Путь к выходным файлам
+COOKIES_IN_FILE = "input_files/cookies.json"
+COOKIES_OUT_FILE = "output_files/cookies_out.json"
 URL = "https://donschool115.eljur.ru/journal-app"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+REQUEST_INTERVAL = 300  # 5 минут
 
 def load_cookies_from_json(filename):
     with open(filename, encoding="utf-8") as f:
@@ -71,5 +75,11 @@ def refresh_session():
     save_cookies(session, COOKIES_OUT_FILE, original_cookie_data)
     print(f"💾 Куки сохранены в {COOKIES_OUT_FILE}")
 
+    # Коммит изменений в репозиторий
+    print("🔄 Выполнение коммита и пуша изменений в репозиторий...")
+    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "commit", "-m", "Обновлены куки"])
+    subprocess.run(["git", "push"])
+
 if __name__ == "__main__":
-    refresh_session()  # Запускаем скрипт один раз
+    refresh_session()
