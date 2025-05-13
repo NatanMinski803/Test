@@ -2,31 +2,34 @@ name: Cookie Refresh
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Каждый час, в начале часа
-  workflow_dispatch:  # Позволяет запускать workflow вручную
+    - cron: '0 * * * *'  # Каждый час
+  workflow_dispatch:  # Позволяет запускать вручную
 
 jobs:
-  refresh_cookies:
-    runs-on: ubuntu-latest  # Используем последний доступный образ Ubuntu
+  refresh-cookies:
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2  # Клонирует репозиторий
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install requests
 
-    - name: Run the script
+    - name: Set up Git
       run: |
-        python script.py  # Замените на имя вашего скрипта
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+
+    - name: Run the script
+      run: python your_script.py  # Замените на путь к вашему скрипту
       env:
         COOKIES_IN_FILE: "input_files/cookies.json"
         COOKIES_OUT_FILE: "output_files/cookies_out.json"
-        USER_AGENT: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
