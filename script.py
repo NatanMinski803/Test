@@ -8,24 +8,27 @@ import subprocess
 COOKIES_IN_FILE = "input_files/cookies.json"
 COOKIES_OUT_FILE = "output_files/cookies_out.json"
 
-# URL для обновления сессии
-URL = "https://donschool115.eljur.ru/journal-app"
+# Заголовки
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 
-# Интервал обновления куки (в секундах)
-REQUEST_INTERVAL = 300  # 5 минут
+# URL-адреса для имитации активности
+URLS_TO_VISIT = [
+    "https://donschool115.eljur.ru/journal-app",       # журнал
+    "https://donschool115.eljur.ru/journal-messages-action",          # сообщения
+    "https://donschool115.eljur.ru/journal-user-preferences-action",      # профиль
+    "https://donschool115.eljur.ru/journal-student-grades-action",             # оценки
+    "https://donschool115.eljur.ru/journal-student-ktp-action",          # домашка
+    "https://donschool115.eljur.ru/journal-tests-action"           # расписание
+]
 
-# Функция для загрузки куки из файла
 def load_cookies_from_json(filename):
-    if not os.path.exists(filename):  # Проверяем, существует ли файл
+    if not os.path.exists(filename):
         print(f"❌ Файл {filename} не найден!")
-        return None, None  # Возвращаем None, если файл не найден
-
-    # Открываем файл и загружаем данные
+        return None, None
     with open(filename, encoding="utf-8") as f:
         cookies_data = json.load(f)
 
-    jar = requests.cookies.RequestsCookieJar()  # Создаем контейнер для куки
+    jar = requests.cookies.RequestsCookieJar()
     for cookie in cookies_data:
         jar.set(
             name=cookie["name"],
@@ -38,17 +41,13 @@ def load_cookies_from_json(filename):
         )
     return jar, cookies_data
 
-# Функция для сохранения куки в файл
 def save_cookies(session, path, original_cookies):
-    original_map = {c["name"]: c for c in original_cookies}  # Сопоставляем куки с их исходными данными
-    cookie_list = []  # Список для новых куки
-
-    for c in session.cookies:  # Проходим по всем куки в сессии
-        original = original_map.get(c.name, {})  # Ищем исходные данные куки
-        domain = c.domain or original.get("domain", "")  # Получаем домен
+    original_map = {c["name"]: c for c in original_cookies}
+    cookie_list = []
+    for c in session.cookies:
+        original = original_map.get(c.name, {})
+        domain = c.domain or original.get("domain", "")
         origin = f"https://{domain.lstrip('.')}" if domain else "https://"
-
-        # Добавляем куки в список
         cookie_list.append({
             "domain": domain,
             "name": c.name,
@@ -64,43 +63,39 @@ def save_cookies(session, path, original_cookies):
             "origin": origin
         })
 
-    # Сохраняем куки в файл
     with open(path, "w", encoding="utf-8") as f:
         json.dump(cookie_list, f, indent=2, ensure_ascii=False)
 
-# Функция для обновления сессии
-def refresh_session():
-    print("🔄 Запуск обновления сессии...")
-    session = requests.Session()  # Создаем новую сессию
-    session.headers.update({"User-Agent": USER_AGENT})  # Обновляем заголовки сессии
+def imitate_user_activity():
+    print("🔄 Запуск имитации активности на сайте Eljur...")
+    session = requests.Session()
+    session.headers.update({"User-Agent": USER_AGENT})
 
-    # Загружаем куки из файла
     cookies, original_cookie_data = load_cookies_from_json(COOKIES_IN_FILE)
-    if cookies is None:  # Если куки не были загружены, выходим
+    if cookies is None:
         return
 
-    session.cookies.update(cookies)  # Обновляем куки в сессии
+    session.cookies.update(cookies)
 
-    try:
-        r = session.get(URL)  # Делаем запрос для обновления сессии
-        if r.status_code == 200:
-            print("✅ Успешный запрос, обновление куки...")
-        else:
-            print(f"⚠️ Ответ сервера: {r.status_code}")
-    except Exception as e:
-        print(f"❌ Ошибка запроса: {e}")
-        return
+    for url in URLS_TO_VISIT:
+        try:
+            print(f"🌐 Переход к: {url}")
+            r = session.get(url)
+            print(f"  ↳ Статус ответа: {r.status_code}")
+            time.sleep(1)  # задержка для реалистичности
+        except Exception as e:
+            print(f"❌ Ошибка при переходе к {url}: {e}")
 
-    # Сохраняем обновленные куки в файл
     save_cookies(session, COOKIES_OUT_FILE, original_cookie_data)
-    print(f"💾 Куки сохранены в {COOKIES_OUT_FILE}")
+    print(f"💾 Куки обновлены и сохранены в: {COOKIES_OUT_FILE}")
 
-    # Коммит изменений в репозиторий
-    print("🔄 Выполнение коммита и пуша изменений в репозиторий...")
-    subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "Обновлены куки"])
-    subprocess.run(["git", "push"])
+    # Git commit и push
+    print("🔄 Git-пуш изменений...")
+    subprocess.run(["git", "add", "."], check=False)
+    subprocess.run(["git", "commit", "-m", "Обновлены куки"], check=False)
+    subprocess.run(["git", "push"], check=False)
+    print("✅ Завершено.")
 
-# Основная программа
+# Точка входа
 if __name__ == "__main__":
-    refresh_session()  # Запускаем обновление сессии
+    imitate_user_activity()
