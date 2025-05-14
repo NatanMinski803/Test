@@ -18,7 +18,7 @@ URLS_TO_VISIT = [
     "https://donschool115.eljur.ru/journal-user-preferences-action",      # профиль
     "https://donschool115.eljur.ru/journal-student-grades-action",             # оценки
     "https://donschool115.eljur.ru/journal-student-ktp-action",          # домашка
-    "https://donschool115.eljur.ru/journal-tests-action"           # расписание
+    "https://donschool115.eljur.ru/journal-schedule-action"           # расписание
 ]
 
 def load_cookies_from_json(filename):
