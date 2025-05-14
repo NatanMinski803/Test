@@ -3,11 +3,10 @@ name: Cookie Refresh
 on:
   push:
     branches:
-      - master               # убедись, что это твоя default-ветка
+      - master           # твоя default-ветка
   schedule:
-    - cron: '*/5 * * * *'
-    - cron: '*/5 * * * *'
-  workflow_dispatch: {}    # ручной запуск для тестирования
+    - cron: '*/5 * * * *'  # каждые 5 минут по UTC
+  workflow_dispatch: {}    # ручной запуск
 
 jobs:
   refresh-cookies:
