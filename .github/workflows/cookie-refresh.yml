@@ -6,7 +6,6 @@ on:
       - master           # твоя default-ветка
   schedule:
     - cron: '*/5 * * * *'  # каждые 5 минут по UTC
-  workflow_dispatch: {}    # ручной запуск
 
 jobs:
   refresh-cookies:
