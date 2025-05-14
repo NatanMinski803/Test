@@ -1,11 +1,7 @@
 name: Cookie Refresh
 
 on:
-  push:
-    branches:
-      - master           # твоя default-ветка
-  schedule:
-    - cron: '*/5 * * * *'  # каждые 5 минут по UTC
+    repository_dispatch:
 
 jobs:
   refresh-cookies:
