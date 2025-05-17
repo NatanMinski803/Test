@@ -1,7 +1,7 @@
 [
   {
     "domain": "donschool115.eljur.ru",
-    "expirationDate": 1747517474.439759,
+    "expirationDate": 1747525428.586597,
     "hostOnly": true,
     "httpOnly": false,
     "name": "ej_fonts",
@@ -15,7 +15,7 @@
   },
   {
     "domain": ".eljur.ru",
-    "expirationDate": 1762983075.786692,
+    "expirationDate": 1762991030.231538,
     "hostOnly": false,
     "httpOnly": true,
     "name": "ej_id",
@@ -29,7 +29,7 @@
   },
   {
     "domain": ".eljur.ru",
-    "expirationDate": 1762983075.786782,
+    "expirationDate": 1762991030.231725,
     "hostOnly": false,
     "httpOnly": true,
     "name": "ej_check",
@@ -51,7 +51,7 @@
     "secure": false,
     "session": true,
     "storeId": "0",
-    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJlajplbGp1cjpkb25zY2hvb2wxMTUiLCJhdWQiOiJlajpzZXNzbiIsImp0aSI6Ijk0MTk4ZjAwMjlkNDBhZGU1OGFmZTY4OTM0YWYxNDExIiwibmJmIjoxNzQ3NDM4ODM1LCJpYXQiOjE3NDc0Mzg4MzUsImV4cCI6MTc0NzUzMjQzNSwiZG9tYWluIjoiZG9uc2Nob29sMTE1Iiwic2VnbWVudCI6ImVsanVyIiwidWlkIjoxNzc3LCJtcCI6ZmFsc2V9.bzOSj4YcujGL8JLI6ARVHuNUWlk7CX0RRcF0t14dvQyEsf5MAR1LVk-oC7NTYhKXfl9TLOnU4WAFVw9FT-o_Pc3uH4JRorI7YBbEUaO_fmLDa2WsYyYHdtuFDPtaTnzIH2RUrlgqyZP0NRioS8SL0obJzveq85jdeBqY8X2LO7pUw7hW4hBpT4twKBAXndr1rFpwoaupxFZ0_Gr5kpv4gmX_pI07qaPOmisNrRegzd7b0PfUqhQrjF8Lywuvr9HtThsLNOSgrTbq2WxWCrX5x8tJi8SzsLZDgwlFitPk6_hbfihhGGiLQskyM7x_NBgxHYpn3hGlE2Qv-IvNOVbHAA",
+    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJlajplbGp1cjpkb25zY2hvb2wxMTUiLCJhdWQiOiJlajpzZXNzbiIsImp0aSI6IjA4NzVhNDdiMTZkODFjMTI3NGQyNWEzOTcwZTU0OWExIiwibmJmIjoxNzQ3NDY0ODIxLCJpYXQiOjE3NDc0NjQ4MjEsImV4cCI6MTc0NzU1ODQyMSwiZG9tYWluIjoiZG9uc2Nob29sMTE1Iiwic2VnbWVudCI6ImVsanVyIiwidWlkIjoxNzc3LCJtcCI6ZmFsc2V9.kJEmNXgkVogPKampioJuv49ZKNRWs_hmMuvq9w4Z_kPkjcq_YQ71Je5iEHa8FNeNOkaAdbBGtZkV8rqH3IYlFvfI6rVUm_vyc-XGRM3fiMgjDOpwwFxLG2l6xbD7H8auP5F8ZUAtWyGfbaL9z47slKUc2MLVkYn6ZGz-JdP5uqNkAVZUf-IUPUt9xk6waFwLde-voql72vVFLqvJpPOKV-bRGfuRR7lJMXsAHSM3cUCooCS5eouwrVw_At1K6sHRMEjC29ry_r5nY3rzlZ5B6brgHlTtqY8_GYpvzakRPXF3CaL5i5YcRtQ-30kJuAnGRCF_4V2IHNxNTgFQnYqRNg",
     "origin": "https://donschool115.eljur.ru"
   },
   {
