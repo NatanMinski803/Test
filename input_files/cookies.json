@@ -1,7 +1,7 @@
 [
   {
     "domain": "donschool115.eljur.ru",
-    "expirationDate": 1747875482.208326,
+    "expirationDate": 1747936991.4976,
     "hostOnly": true,
     "httpOnly": false,
     "name": "ej_fonts",
@@ -23,7 +23,7 @@
     "secure": false,
     "session": true,
     "storeId": "0",
-    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJlajplbGp1cjpkb25zY2hvb2wxMTUiLCJhdWQiOiJlajpzZXNzbiIsImp0aSI6ImMwZTNmMTM4OGJlZTgyOWViN2UyMThlMjk2NzRiNTRkIiwibmJmIjoxNzQ3ODAyNTA4LCJpYXQiOjE3NDc4MDI1MDgsImV4cCI6MTc0Nzg5NjEwOCwiZG9tYWluIjoiZG9uc2Nob29sMTE1Iiwic2VnbWVudCI6ImVsanVyIiwidWlkIjo4NSwibXAiOmZhbHNlfQ.gSKCacH2m_DIAIKldT4aBmYJM8KYKGnxpeuRT5sTwEFuBlDWVcTe0ho0MogCDNOdXFgydNbhWVUNAgsWWgKqsd8ahdwb0ZWe-x53E9By-swoYI7XlwALiMDvoJkL6H3b7svSeKtSZH1183XO49blFJrMRuy2gjqkJ-zESnLV_lmOWYy6_o8z9OQ-ORP-P6ag59BsDrfjfSm4BNYv_dFN67FC9CHQORSRBvqV2sMCzrswQx4efdkN7g9yIIK4TPH1TOpwl9Rm0HLOpKTuqwqlevq7vL6ObWpQTjrIY-UrAMYhbw_PlqDBtdgJ0ezsd1mXWBT7i2CpX28tZpDT1lV5Eg",
+    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJlajplbGp1cjpkb25zY2hvb2wxMTUiLCJhdWQiOiJlajpzZXNzbiIsImp0aSI6IjI0NmVmMzE5NTRiY2EzZjZkNjk5OTMwYzI3MWZiZDExIiwibmJmIjoxNzQ3ODUwNjI5LCJpYXQiOjE3NDc4NTA2MjksImV4cCI6MTc0Nzk0NDIyOSwiZG9tYWluIjoiZG9uc2Nob29sMTE1Iiwic2VnbWVudCI6ImVsanVyIiwidWlkIjo4NSwibXAiOmZhbHNlfQ.M32kODpaPuKmlGI_Kl73DtptgB6csyL8feu9a5D-UM93E695_GyKiSft8dxkS8RufAXhxrfzxVyh23OdOfL4gqbargCQ5vHsJd3PYnAA9rr_84JeOwGRh1ZqsVNdwiCkSPI7zKQBiJHQPM52wzqU5fI_1q2RS6iB4X4QyUoJXkwrzerSnKgWGWi6MN3rauMkDG7_usorbOAYrOuOHXnctYqyygAKCvKrMKUt8erz33jBjqr-_Q5IPx_3oFpofNA-wOwOmQJq0gRUYYERNN96OnzyNqYlyBYrl0BCVEhBvHK5Mk8ndCEKpUKtbXMuhPv5R6t-uFDwQpYuWw0c0vB5QQ",
     "origin": "https://donschool115.eljur.ru"
   },
   {
@@ -41,7 +41,7 @@
   },
   {
     "domain": ".eljur.ru",
-    "expirationDate": 1763354489.076402,
+    "expirationDate": 1763402609.098106,
     "hostOnly": false,
     "httpOnly": true,
     "name": "ej_id",
@@ -50,12 +50,12 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "536b16b2-6961-4a29-ab6f-fc7e64c9206a",
+    "value": "b3f763ac-435d-4baf-b42b-fb26e9a226ac",
     "origin": "https://donschool115.eljur.ru"
   },
   {
     "domain": ".eljur.ru",
-    "expirationDate": 1763354489.076684,
+    "expirationDate": 1763402609.098222,
     "hostOnly": false,
     "httpOnly": true,
     "name": "ej_check",
@@ -64,46 +64,7 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "d4202f3d75fc9d5708e8a9d2654d0c2f",
-    "origin": "https://donschool115.eljur.ru"
-  },
-  {
-    "domain": "donschool115.eljur.ru",
-    "hostOnly": true,
-    "httpOnly": false,
-    "name": "ej_id",
-    "path": "/",
-    "sameSite": "strict",
-    "secure": false,
-    "session": true,
-    "storeId": "0",
-    "value": "536b16b2-6961-4a29-ab6f-fc7e64c9206a",
-    "origin": "https://donschool115.eljur.ru"
-  },
-  {
-    "domain": "donschool115.eljur.ru",
-    "hostOnly": true,
-    "httpOnly": false,
-    "name": "ej_check",
-    "path": "/",
-    "sameSite": "strict",
-    "secure": false,
-    "session": true,
-    "storeId": "0",
-    "value": "d4202f3d75fc9d5708e8a9d2654d0c2f",
-    "origin": "https://donschool115.eljur.ru"
-  },
-  {
-    "domain": "donschool115.eljur.ru",
-    "hostOnly": true,
-    "httpOnly": false,
-    "name": "ej_fp",
-    "path": "/",
-    "sameSite": "strict",
-    "secure": false,
-    "session": true,
-    "storeId": "0",
-    "value": "45b3a200c4085a9894ed214132d3d49d",
+    "value": "2f8681a737e19690e59090528331fcfd",
     "origin": "https://donschool115.eljur.ru"
   }
 ]
