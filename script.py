@@ -6,7 +6,7 @@ import subprocess
 
 # Пути к файлам куки
 COOKIES_IN_FILE = "input_files/cookies.json"
-COOKIES_OUT_FILE = "input_files/cookies.json"
+COOKIES_OUT_FILE = "output_files/cookies_out.json"
 
 # Заголовки
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
